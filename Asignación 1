@@ -1,0 +1,107 @@
+//Task 1: Add Jest as a devDependency
+Open terminal. Make sure that it's pointing to jest-testing directory.
+Install the jest npm package using the npm install command and the --save-dev flag.
+Verify that the installation was completed successfully by opening the package.json file and confirming that the "devDependencies" entry lists jest similar to the following:
+
+"devDependencies": {
+    "jest": "^28.0.0"
+}
+
+Task 2: Update the test entry
+In the package.json file, locate the "scripts" entry, and inside of it, update the test entry to jest.
+
+
+Task 3: Code the timesTwo function
+Open the timesTwo.js file and add a function named timesTwo. The function should take number as input and return the value 2 multiplied by the number. Export the timesTwo function as a module.
+
+
+Task 4: Write the first test
+Code a test call with the following arguments:
+
+The description that reads: "returns the number times 2".
+The second argument should expect the call to the timesTwo function, when passed the number 10, to be 20.
+
+Task 5: Run the first test
+With the terminal pointed at the jest-testing directory, run the test script using npm.
+
+//result
+
+Here’s a step-by-step guide to completing the tasks you've outlined:
+
+### Task 1: Add Jest as a devDependency
+
+1. **Open Terminal**
+   Ensure your terminal is pointed at the `jest-testing` directory. You can navigate to the directory using:
+   ```bash
+   cd path/to/jest-testing
+   ```
+
+2. **Install Jest**
+   Run the following command to install Jest as a dev dependency:
+   ```bash
+   npm install jest --save-dev
+   ```
+
+3. **Verify Installation**
+   Open the `package.json` file and check the `devDependencies` section. You should see Jest listed similarly to:
+   ```json
+   "devDependencies": {
+     "jest": "^28.0.0"
+   }
+   ```
+   The version might differ slightly depending on the latest release.
+
+### Task 2: Update the test entry
+
+1. **Open package.json**
+   Locate the `scripts` section within the `package.json` file.
+
+2. **Update the test entry**
+   Modify the `test` entry so that it runs Jest. It should look something like this:
+   ```json
+   "scripts": {
+     "test": "jest"
+   }
+   ```
+
+### Task 3: Code the `timesTwo` function
+
+1. **Create `timesTwo.js`**
+   If the file doesn’t exist, create a new file named `timesTwo.js` in your project directory.
+
+2. **Write the Function**
+   Add the following code to `timesTwo.js`:
+   ```javascript
+   function timesTwo(number) {
+     return number * 2;
+   }
+
+   module.exports = timesTwo;
+   ```
+
+### Task 4: Write the first test
+
+1. **Create `timesTwo.test.js`**
+   Create a new file named `timesTwo.test.js` in your project directory.
+
+2. **Write the Test**
+   Add the following code to `timesTwo.test.js`:
+   ```javascript
+   const timesTwo = require('./timesTwo');
+
+   test('returns the number times 2', () => {
+     expect(timesTwo(10)).toBe(20);
+   });
+   ```
+
+### Running the Tests
+
+1. **Run Jest**
+   Back in the terminal, execute the tests by running:
+   ```bash
+   npm test
+   ```
+
+   Jest should discover your test file and run it, showing you the results.
+
+If everything is set up correctly, Jest should run your test and confirm that the `timesTwo` function works as expected.
